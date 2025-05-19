@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes</title>
+    <link rel="stylesheet" href="/css/global.css">
+    <link rel="stylesheet" href="/css/detalhes.css">
+    <script src="/js/global.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <%- include('components/header.ejs') %>
+        <div class="container">
+            <img class="moto-photo" src="<%= moto.img %>" alt="" srcset="">
+            <h2 class="moto-name" id="moto-name">
+                <%= moto.Nome %>
+            </h2>
+            <strong>Consórcio</strong>
+            <div class="plano-container">
+                <div class="plano-box">
+                    <strong>24x</strong>
+                    <p>R$ <%= moto['24x'] %></p>
+                </div>
+                <div class="plano-box">
+                    <strong>36x</strong>
+                    <p>R$ <%= moto['36x'] %></p>
+                </div>
+                <div class="plano-box">
+                    <strong>48x</strong>
+                    <p>R$ <%= moto['48x'] %></p>
+                </div>
+                <div class="plano-box">
+                    <strong>60x</strong>
+                    <p>R$ <%= moto['60x'] %></p>
+                </div>
+                <div class="plano-box">
+                    <strong>80x</strong>
+                    <p>R$ <%= moto['80x'] %></p>
+                </div>
+            </div>
+            <button id="chamar-zap" class="contact-btn zap" href="#"><i class="fa-brands fa-whatsapp"></i>Chamar no Whatsapp</button>
+            <button class="contact-btn financiamento" id="openModal"><i
+                    class="fa-solid fa-building-columns"></i>Financiamento</button>
+        </div>
+        <div id="modal" class="modal">
+            <div class="modal-content">
+                <h2 id="modal-title">Financiamento</h2>
+                <input type="text" name="nome" id="nome" placeholder="Seu nome...">
+                <input type="number" name="entrada" id="entrada" placeholder="Valor da entrada R$">
+                <select name="prazo" id="prazo">
+                    <option style="display: none; " value="" disabled selected>Prazo</option>
+                    <option value="3 meses">3 meses</option>
+                    <option value="6 meses">6 meses</option>
+                    <option value="9 meses">9 meses</option>
+                    <option value="12 meses">12 meses</option>
+                    <option value="15 meses">15 meses</option>
+                    <option value="18 meses">18 meses</option>
+                    <option value="24 meses">24 meses</option>
+                    <option value="30 meses">30 meses</option>
+                    <option value="36 meses">36 meses</option>
+                    <option value="42 meses">42 meses</option>
+                    <option value="48 meses">48 meses</option>
+                    <option value="50 meses">50 meses</option>
+                    <option value="55 meses">55 meses</option>
+                </select>
+                <input class="modal-btn zap" type="button" value="Confirmar" id="confirmar-btn">
+                <input class="modal-btn fechar" type="button" value="Fechar" id="fechar-modal-btn">
+            </div>
+        </div>
+</body>
+<script>
+    $('#openModal').on('click', () => {
+        $('#modal').fadeIn(500)
+        $('#modal').css('display', 'flex')
+        $('#modal-title').html('Financiamento')
+        const titleAndModel = `${$('#modal-title').text()} - ${$('#moto-name').text()}`
+        $('#modal-title').html(titleAndModel)
+    })
+    $('#fechar-modal-btn').on('click', () => {
+        $('#modal').fadeOut(500)
+        $('#modal').css('display', 'none')
+    })
+    $('#confirmar-btn').on('click', ()=>{
+        const nome = $('#nome').val()
+        const entrada = $('#entrada').val()
+        const prazo = $('#prazo').val()
+        const modelo = $('#moto-name').text()
+        const msg = `Olá Sr. Jamir, meu nome é ${nome}, estou interessado(a) em um financiamento: Modelo ${modelo} Entrada: R$ ${entrada} e Prazo de ${prazo}`
+        
+        const telefone = '91981073539'
+        const zapUrl = `https://wa.me/${telefone}?text=${msg}`
+        location.href = zapUrl
+    })
+    $('#chamar-zap').on('click', ()=>{
+        const telefone = '91981073539'
+        const zapUrl = `https://wa.me/${telefone}?text=`
+        location.href = zapUrl
+    })
+</script>
+
+</html>

@@ -1,0 +1,55 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 90%;
+    margin: auto;
+}
+
+.profile-photo{
+    height: 150px;
+    width: 150px;
+    box-shadow: 0px 0px 20px red;
+    border-radius: 50%;
+}
+
+.profile-name{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 2rem;
+    margin: 10px;
+    color: darkblue;
+}
+
+.planos-btn{
+    text-decoration: none;
+    padding: 5px;
+    background: linear-gradient(to top, red, rgb(145, 2, 2));
+    color: white;
+    margin: 5px;
+    min-width: 250px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+    font-size: 1.5rem;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px gray;
+}
+
+.social-media-container{
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    padding: 10px;
+    box-shadow: 0px 0px 10px gray;
+    background-color: whitesmoke;
+}
+
+.social-media-container > img{
+    height: 10vw;
+    margin: 5px;
+    border-radius: 50%;
+    cursor: pointer;
+}

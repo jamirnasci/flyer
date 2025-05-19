@@ -1,0 +1,44 @@
+.container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.motos-container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.moto-card{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 95%;
+    height: 100px;
+    margin-bottom: 5px;
+    border-radius: 10px;
+    overflow: hidden;
+    background: linear-gradient(to top, white, whitesmoke);
+    box-shadow: 0px 0px 10px lightgray;
+}
+.photo-box{
+    display: flex;
+    align-items: center;
+}
+.moto-photo{
+    height: 100px;
+}
+
+.moto-details{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: white;
+    background: linear-gradient(45deg, forestgreen, green, darkgreen);
+    height: 100%;
+    width: 15vw;
+    font-size: 10vw;
+}

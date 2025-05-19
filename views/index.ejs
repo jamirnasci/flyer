@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App</title>
+    <link rel="stylesheet" href="/css/global.css">
+    <link rel="stylesheet" href="/css/index.css">
+    <script src="/js/global.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <%- include('components/header.ejs') %>
+    <div class="container">
+        <img class="profile-photo" src="https://cdn-icons-png.flaticon.com/512/9187/9187604.png" alt="">
+        <strong class="profile-name">Jamir Nascimento</strong>
+        <a class="planos-btn" href="/motos">Ver Modelos</a>
+        <br><br>
+        <h2>Entre em contato</h2>
+        <div class="social-media-container">
+            <img src="/img/instagram_icon.webp" alt="" id="insta-icon">
+            <img src="/img/gmail.webp" alt="" id="gmail-icon">
+            <img src="/img/zap.png" alt="" id="zap-icon">
+        </div>
+    </div>
+</body>
+<script>
+    $('#insta-icon').on('click', ()=>{
+        location.href = 'https://www.instagram.com/jamir.honda?igsh=dDI1djZqN3VjOXM3'
+    })
+    $('#zap-icon').on('click', ()=>{
+        const telefone = '91981073539'
+        const zapUrl = `https://wa.me/${telefone}?text=`
+        location.href = zapUrl
+    })
+    $('#gmail-icon').on('click', ()=>{
+        location.href = 'https://mail.google.com/mail/?view=cm&fs=1&to=hondaprofissional@gmail.com';
+    })
+</script>
+</html>

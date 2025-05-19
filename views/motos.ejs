@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Motos</title>
+    <link rel="stylesheet" href="/css/global.css">
+    <link rel="stylesheet" href="/css/motos.css">
+    <script src="/js/global.js"></script>
+</head>
+<body>
+    <%- include('components/header.ejs') %>
+    <div class="container">
+        <div class="motos-container">
+            <h1 class="moto-title">Modelos disponíveis</h1>
+            <% for(let i = 0; i < motos.length; i++) { %>
+            <div class="moto-card">
+                <div class="photo-box">
+                    <img class="moto-photo" src="<%= motos[i].img%>" alt="">
+                    <strong class="moto-name"><%= motos[i].Nome %></strong>
+                </div>
+                <a class="moto-details" href="/motos/<%= motos[i].id%>">+</a>
+            </div>
+            <% } %>
+        </div>
+    </div>
+</body>
+</html>
