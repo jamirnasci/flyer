@@ -15,7 +15,6 @@ class SheetApi{
     }
     findMotoById(id){
         let moto = this.sheet.filter(moto => moto.id == id)
-        console.log(moto)
         return moto
     }
     findAll(){
