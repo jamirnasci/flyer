@@ -1,5 +1,4 @@
-import { SheetApi } from "../sheet/sheetapi";
-
+const {SheetApi} = require('../sheet/sheetapi')
 
 const sheet = new SheetApi();
 
