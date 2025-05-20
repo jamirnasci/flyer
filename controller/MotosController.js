@@ -1,4 +1,4 @@
-const { SheetApi } = require("../sheet/sheetapi")
+const { SheetApi } = require("../sheet/SheetApi")
 
 const sheet = new SheetApi()
 sheet.loadSheet()
