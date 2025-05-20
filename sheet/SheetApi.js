@@ -18,4 +18,4 @@ class SheetApi {
     }
 }
 
-module.exports = SheetApi
+module.exports = {SheetApi}

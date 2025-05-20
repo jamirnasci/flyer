@@ -1,7 +1,7 @@
-const SheetApi = require("../sheet/sheetapi");
+const { SheetApi } = require("../sheet/SheetApi");
 
 
-const sheet = new SheetApi();
+const sheet = new SheetApii();
 
 exports.Motos = async (req, res) => {
     if (!sheet.sheet) await sheet.loadSheet(); // garante que os dados estão carregados
