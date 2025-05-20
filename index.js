@@ -5,7 +5,6 @@ const path = require('path')
 const MotosController = require('./controller/MotosController')
 const IndexController= require('./controller/IndexController')
 const app = express()
-const PORT = process.env.PORT || 3000
 
 app.set('view engine', 'ejs')
 app.set('views', path.join(__dirname, 'views'))
@@ -15,6 +14,7 @@ app.use(bodyParser.urlencoded({extended: true}))
 app.get('/', IndexController.index)
 app.get('/motos', MotosController.Motos)
 app.get('/motos/:id', MotosController.Details)
-app.listen(PORT, _ => console.log(`server running on ${PORT}`))
+// const PORT = process.env.PORT || 3000
+// app.listen(PORT, _ => console.log(`server running on ${PORT}`))
 
 module.exports = app
