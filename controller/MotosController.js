@@ -1,16 +1,16 @@
-const SheetApi = require("../sheet/sheetapi")
+const { SheetApi } = require("../sheet/sheetapi");
 
-const sheet = new SheetApi()
-sheet.loadSheet()
+const sheet = new SheetApi();
 
-exports.Motos = async (req, res)=>{
-    const motos = await sheet.findAll()
-    res.render('motos', {motos, isBack: true})
-}
+exports.Motos = async (req, res) => {
+    if (!sheet.sheet) await sheet.loadSheet(); // garante que os dados estão carregados
+    const motos = sheet.findAll();
+    res.render('motos', { motos, isBack: true });
+};
 
-exports.Details = async (req, res)=>{
-    const id = req.params.id
-    const moto = await sheet.findMotoById(id)[0]
-    const back = 'd-block'
-    res.render('detalhes', {moto,  isBack: true})
-}
+exports.Details = async (req, res) => {
+    if (!sheet.sheet) await sheet.loadSheet(); // garante que os dados estão carregados
+    const id = req.params.id;
+    const moto = sheet.findMotoById(id)[0];
+    res.render('detalhes', { moto, isBack: true });
+};
