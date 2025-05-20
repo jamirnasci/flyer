@@ -7,21 +7,26 @@
     margin: auto;
 }
 
-.profile-photo{
-    height: 150px;
-    width: 150px;
-    box-shadow: 0px 0px 20px red;
+.profile-photo-box{
     border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0px 0px 10px black;
+}
+
+.profile-photo{
+    height: 200px;
+    width: 180px;
 }
 
 .profile-name{
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: 2rem;
     margin: 10px;
-    color: darkblue;
+    color: red;
 }
 
 .planos-btn{
+    display: none;
     text-decoration: none;
     padding: 5px;
     background: linear-gradient(to top, red, rgb(145, 2, 2));

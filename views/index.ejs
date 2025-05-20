@@ -12,9 +12,11 @@
 <body>
     <%- include('components/header.ejs') %>
     <div class="container">
-        <img class="profile-photo" src="https://cdn-icons-png.flaticon.com/512/9187/9187604.png" alt="">
-        <strong class="profile-name">Jamir Nascimento</strong>
-        <a class="planos-btn" href="/motos">Ver Modelos</a>
+        <div id="profile-photo-box" class="profile-photo-box">
+            <img class="profile-photo" src="img/profile.jpeg" alt="">
+        </div>
+        <strong class="profile-name">Jamir Cardoso</strong>
+        <a id="planos-btn" class="planos-btn" href="/motos">Ver Modelos</a>
         <br><br>
         <h2>Entre em contato</h2>
         <div class="social-media-container">
@@ -36,5 +38,6 @@
     $('#gmail-icon').on('click', ()=>{
         location.href = 'https://mail.google.com/mail/?view=cm&fs=1&to=hondaprofissional@gmail.com';
     })
+    $('#planos-btn').fadeIn(1000)
 </script>
 </html>

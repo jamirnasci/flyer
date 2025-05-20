@@ -2,14 +2,14 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const ejs = require('ejs')
 const path = require('path')
-const MotosController = require('./controller/MotosController')
-const IndexController= require('./controller/IndexController')
+const MotosController = require('../controller/MotosController')
+const IndexController= require('../controller/IndexController')
 const app = express()
 const PORT = process.env.PORT || 3000
 
 app.set('view engine', 'ejs')
 app.set('views', 'views')
-app.use(express.static(path.join(__dirname, 'public')))
+app.use(express.static(path.join(__dirname, '../public')))
 app.use(bodyParser.urlencoded({extended: true}))
 
 app.get('/', IndexController.index)
