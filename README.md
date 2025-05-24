@@ -13,3 +13,5 @@ Nesse caso, foi feito para um perfil de consultor de vendas de motocicletas, nos
 - Express.js
 - papaparser
 - EJS 
+
+obs. é apenas mobile
