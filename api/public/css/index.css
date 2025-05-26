@@ -1,60 +1,86 @@
-.container{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 90%;
-    margin: auto;
-}
+/* index.css */
 
-.profile-photo-box{
-    border-radius: 50%;
-    overflow: hidden;
-    box-shadow: 0px 0px 10px black;
-}
-
-.profile-photo{
-    height: 200px;
-    width: 180px;
-}
-
-.profile-name{
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    font-size: 2rem;
-    margin: 10px;
-    color: red;
-}
-
-.planos-btn{
-    display: none;
-    text-decoration: none;
-    padding: 5px;
-    background: linear-gradient(to top, red, rgb(145, 2, 2));
-    color: white;
-    margin: 5px;
-    min-width: 250px;
-    padding-top: 10px;
-    padding-bottom: 10px;
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
     text-align: center;
-    font-size: 1.5rem;
-    border-radius: 5px;
-    box-shadow: 0px 0px 10px gray;
 }
 
-.social-media-container{
+.container {
+    display: none;
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.profile-photo-box {
+    margin-top: 20px;
+}
+
+.profile-photo {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid #2196f3;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.2);
+}
+
+.profile-name {
+    display: block;
+    margin-top: 15px;
+    font-size: 1.5rem;
+    color: #333;
+    font-weight: bold;
+}
+
+.planos-btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 24px;
+    background-color: red;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.planos-btn:hover {
+    background-color: #1976d2;
+}
+
+h2 {
+    margin-top: 40px;
+    font-size: 1.4rem;
+    color: #444;
+}
+
+.social-media-container {
     margin-top: 20px;
     display: flex;
-    align-items: center;
     justify-content: center;
-    border-radius: 20px;
-    padding: 10px;
-    box-shadow: 0px 0px 10px gray;
-    background-color: whitesmoke;
+    gap: 25px;
 }
 
-.social-media-container > img{
-    height: 10vw;
-    margin: 5px;
-    border-radius: 50%;
+.social-media-container img {
+    width: 48px;
+    height: 48px;
     cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.social-media-container img:hover {
+    transform: scale(1.15);
+}
+
+@media  screen and (max-width:786px) {
+    .container{
+        width: 80%;
+    }
 }
